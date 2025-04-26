@@ -20,49 +20,71 @@ body{
     list-style: none;
     justify-content: flex-end;
     margin: 50px 40px 0 0;
-    font-size: 20px;
-    color: var(--cor-secundaria);
 }
 
 .link_navbar{
+    padding: 1em 1em;
     text-decoration: none;
+    margin-right: 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
     color: var(--cor-secundaria);
-    margin-right: 40px;
-    transition: color 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out;
-    border: 2px solid var(--cor-secundaria);
-    padding: 5px 10px;
-    border-radius: 8px;
+    transition: all 1000ms;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    outline: 2px solid var(--cor-secundaria);
 }
 
 .link_navbar:hover{
-    color: var(--cor-principal);
-    transition: 10px;
+    color: #ffffff;
+    transform: scale(1.05);
+    outline: 2px solid var(--cor-secundaria);
+    box-shadow: 4px 5px 17px -4px var(--cor-secundaria);
+}
+
+.link_navbar:before{
+    content: "";
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 0;
+    height: 100%;
     background-color: var(--cor-secundaria);
+    transform: skewX(45deg);
+    z-index: -1;
+    transition: width 1000ms;
+}
+
+.link_navbar:hover:before{
+    width: 250%;
+}
+
+.container_primario{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
 }
 
 .container_texto{
-    margin: 110px 0 0 40px;
+    margin: 0 90px 0 40px;
 }
 
 .container_texto h1{
     font-size: 62px;
     color: var(--cor-principal);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .container_texto hr{
-    width: 30%;
+    width: 75%;
     height: 3px;
     background-color: white;
-    margin: 0px;
-}
-
-.container_texto p{
-    font-size: 22px;
-    color: var(--cor-secundaria);
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 0 0 30px 0;
 }
 
 .botao_curriculo{
@@ -84,7 +106,7 @@ body{
 
 .redesSociais{
     display: flex;
-    margin-top: 80px;
+    margin-top: 40px;
     gap: 40px;
 }
 
@@ -96,6 +118,72 @@ body{
     width: 50px;
     height: auto;
 }
+
+.container_textoApresentacao{
+    display: flex;
+    justify-content: center;
+    
+}
+
+#cursor,
+#box,
+#text {
+  cursor: pointer;
+}
+#cursor {
+  overflow: visible;
+  transform: translate3d(300px, 0, 0) scale(1);
+  transform-origin: center center;
+  transform-box: fill-box;
+  animation: cursor 5s ease infinite alternate;
+}
+@keyframes cursor {
+  0% {
+    opacity: 0;
+    transform: translate3d(300px, 0, 0) scale(1);
+  }
+  30% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(-200px, -200px, 0) scale(1);
+  }
+
+  /* clique */
+  65% {
+    opacity: 1;
+    transform: translate3d(-200px, -200px, 0) scale(0.95);
+  }
+  70% {
+    opacity: 1;
+    transform: translate3d(-200px, -200px, 0) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(-300px, -50px, 0) scale(1);
+  }
+}
+
+#box {
+  opacity: 0;
+  animation: box 5s ease infinite alternate;
+}
+@keyframes box {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  65%,
+  100% {
+    opacity: 1;
+  }
+}
+#text {
+}
+
 
 .container_secundario{
     margin-top: 120px;
@@ -204,5 +292,13 @@ slide img:hover{
 
 .contato_email p{
     margin-top: 0px;
+    color: var(--cor-secundaria);
+}
+
+.titulo_projetos{
+    display: flex;
+    margin-top: 200px;
+    justify-content: center;
+    font-size: 40px;
     color: var(--cor-secundaria);
 }
