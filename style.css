@@ -1,7 +1,7 @@
 :root{
-    --cor-de-fundo: #232C3D;
+    --cor-de-fundo: #000000;
     --cor-principal: #ffffff;
-    --cor-secundaria: #3493E0;
+    --cor-secundaria: #00c635;
 }
 
 html {
@@ -86,6 +86,21 @@ body{
     background-color: white;
     margin: 0 0 30px 0;
 }
+
+.blur-light {
+    position: absolute;
+    margin: 150px 0 0 -45px;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 200px;
+    background: radial-gradient(circle, var(--cor-secundaria));
+    filter: blur(50px);
+    opacity: 0.8;
+    z-index: -1;
+  }
+  
+  
 
 .botao_curriculo{
     text-decoration: none;
