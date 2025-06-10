@@ -1,6 +1,6 @@
 AOS.init({
-    duration: 1000, // Duração da animação (ms)
-    once: true      // Se quiser que a animação aconteça só uma vez
+    duration: 1000, 
+    once: true      
   });
 
   function baixarArquivo() {
@@ -11,3 +11,5 @@ AOS.init({
     link.click();
     document.body.removeChild(link);
   }
+
+//Menu hamburguer

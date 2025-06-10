@@ -1,5 +1,5 @@
 :root{
-    --cor-de-fundo: #000e01;
+    --cor-de-fundo: #000000;
     --cor-principal: #ffffff;
     --cor-secundaria: #00c635;
 }
@@ -93,6 +93,7 @@ body{
 
 .container_texto{
     margin: 0 90px 0 40px;
+    padding: 0 25px;
 }
 
 .container_texto h1{
@@ -101,11 +102,23 @@ body{
     margin-bottom: 10px;
 }
 
+.container_texto p{
+    font-size: 20px;
+    color: var(--cor-principal);
+    margin: 20px 0 40px 0;
+}
+
 .container_texto hr{
     width: 75%;
     height: 3px;
     background-color: white;
-    margin: 0 0 30px 0;
+    margin-left: -0px;
+}
+
+.img_home{
+    width: 450px;
+    height: auto;
+    border-radius: 80px;
 }
 
 .button {
@@ -116,7 +129,6 @@ body{
     width: 325px;
     text-decoration: none;
     margin-right: 20px;
-    margin-left: 8px;
     border: none;
     border-radius: 5px;
     font-weight: bold;
@@ -177,69 +189,8 @@ body{
 .container_textoApresentacao{
     display: flex;
     justify-content: center;
+}
     
-}
-
-#cursor,
-#box,
-#text {
-  cursor: pointer;
-}
-#cursor {
-  overflow: visible;
-  transform: translate3d(300px, 0, 0) scale(1);
-  transform-origin: center center;
-  transform-box: fill-box;
-  animation: cursor 5s ease infinite alternate;
-}
-@keyframes cursor {
-  0% {
-    opacity: 0;
-    transform: translate3d(300px, 0, 0) scale(1);
-  }
-  30% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  60% {
-    opacity: 1;
-    transform: translate3d(-200px, -200px, 0) scale(1);
-  }
-
-  /* clique */
-  65% {
-    opacity: 1;
-    transform: translate3d(-200px, -200px, 0) scale(0.95);
-  }
-  70% {
-    opacity: 1;
-    transform: translate3d(-200px, -200px, 0) scale(1);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translate3d(-300px, -50px, 0) scale(1);
-  }
-}
-
-#box {
-  opacity: 0;
-  animation: box 5s ease infinite alternate;
-}
-@keyframes box {
-  0%,
-  60% {
-    opacity: 0;
-  }
-  65%,
-  100% {
-    opacity: 1;
-  }
-}
-#text {
-}
-
-
 .container_secundario{
     margin-top: 120px;
 }
@@ -333,10 +284,7 @@ body{
     justify-content: center;
     align-items: center;
   }
-
   
-  
-  /* --- Mantive a pausa no hover --- */
   .card-3d:hover {
     animation-play-state: paused !important;
   }
@@ -345,7 +293,7 @@ body{
     animation-play-state: paused !important;
   }
   
-  /* --- Aqui aumentei o translateZ para 300px --- */
+ 
   .card-3d div:nth-child(1) {
     transform: translate(-50%, -50%) rotateY(0deg) translateZ(300px);
     animation-delay: -0s;
@@ -398,17 +346,22 @@ body{
 
 .titulo_projetos{
     display: flex;
+    justify-content: center;
     margin-top: 200px;
     margin-bottom: 60px;
-    justify-content: center;
     font-size: 40px;
     color: var(--cor-secundaria);
 }
 
 .cardsP{
-    display: flex;
-    flex-direction: row;
+     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
     justify-content: center;
+    align-items: start; 
+    max-width: 1000px; 
+    margin: 0 auto;     
+    padding: 0 20px;  
 }
 
 .card01 {
@@ -455,9 +408,8 @@ body{
 }
 
 .card01:hover::before {
-  opacity: 1; /* Torna o pseudo-elemento visível ao passar o mouse */
+  opacity: 1; 
 }
-
 
 .card02 {
   position: relative;
@@ -468,6 +420,7 @@ body{
   padding: 20px;
   overflow: hidden; 
   transition: transform 0.5s;
+  margin-right: 40px;
 }
 
 .card02 p {
@@ -502,10 +455,55 @@ body{
 }
 
 .card02:hover::before {
-  opacity: 1; /* Torna o pseudo-elemento visível ao passar o mouse */
+  opacity: 1; 
 }
 
+.card03 {
+  position: relative;
+  border: 2px solid var(--cor-secundaria);
+  border-radius: 20px;
+  width: 450px;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden; 
+  transition: transform 0.5s;
+  margin-right: 40px;
+}
 
+.card03 p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  position: relative; 
+  z-index: 2;
+  text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7); 
+}
+
+.card03::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(./imagens/ImgSiteProjeto03.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(1px) brightness(80%); 
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: -1; 
+  pointer-events: none; 
+  
+}
+
+.card03:hover {
+  transform: scale(1.1);
+}
+
+.card03:hover::before {
+  opacity: 1; 
+}
 
 
 .linkP{
@@ -577,5 +575,4 @@ body{
     margin-top: 0px;
     color: var(--cor-secundaria);
 }
-
 
