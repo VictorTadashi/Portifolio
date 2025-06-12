@@ -13,3 +13,10 @@ AOS.init({
   }
 
 //Menu hamburguer
+ function abrirMenu() {
+    document.getElementById("mobileNav").style.display = "flex";
+  }
+
+  function fecharMenu() {
+    document.getElementById("mobileNav").style.display = "none";
+  }

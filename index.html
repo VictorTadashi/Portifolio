@@ -8,17 +8,29 @@
     <title>Victor Tadashi</title>
 </head>
 <body>
-    
-        <nav class="navbar">              
-          <img src="./imagens/Logo.png" alt="Logo do Site" class="logo_navbar">
-            <li class="nav_links" data-aos="fade-left">
-                <a href="#container_primario" class="link_navbar">Home</a>
-                <a href="#container_secundario" class="link_navbar">Sobre mim</a>
-                <a href="#container_terciario" class="link_navbar">Skills</a>
-                <a href="#container_quarto" class="link_navbar">Projetos</a>
-                <a href="#container_quinto" class="link_navbar">Contato</a>
-            </li>
-        </nav>
+       <nav class="navbar">              
+  <button class="hamburger" onclick="abrirMenu()">☰</button>
+  <img src="./imagens/Logo.png" alt="Logo do Site" class="logo_navbar">
+  <li class="nav_links">
+    <a href="#container_primario" class="link_navbar">Home</a>
+    <a href="#container_secundario" class="link_navbar">Sobre mim</a>
+    <a href="#container_terciario" class="link_navbar">Skills</a>
+    <a href="#container_quarto" class="link_navbar">Projetos</a>
+    <a href="#container_quinto" class="link_navbar">Contato</a>
+  </li>
+</nav>
+
+<!-- Menu mobile fullscreen -->
+<div class="mobile_nav" id="mobileNav">
+  <button class="close_btn" onclick="fecharMenu()">✖</button>
+  <ul class="mobile_nav_links">
+    <li><a href="#container_primario" onclick="fecharMenu()">Home</a></li>
+    <li><a href="#container_secundario" onclick="fecharMenu()">Sobre mim</a></li>
+    <li><a href="#container_terciario" onclick="fecharMenu()">Skills</a></li>
+    <li><a href="#container_quarto" onclick="fecharMenu()">Projetos</a></li>
+    <li><a href="#container_quinto" onclick="fecharMenu()">Contato</a></li>
+  </ul>
+</div>
         <section class="container_primario" id="container_primario">
         <div class="container_textoApresentacao">
             <div class="container_texto" data-aos="fade-right">
