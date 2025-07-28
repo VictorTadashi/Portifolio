@@ -294,8 +294,7 @@ body{
 
 .titulo_secundario{
     display: flex;
-    margin-top: 120px;
-    margin-bottom: 20px;
+    /* margin-top: 120px; */
     justify-content: center ;
     font-size: 40px;
     color: var(--cor-secundaria);
@@ -309,14 +308,14 @@ body{
 .texto_sobremim{
     margin-left: 80px;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .imagem_sobremim{
     width: 400px;
     height: 500px;
     border-radius: 80px;
-    margin: 0 0 0 40px;
+    margin: -120px 0 0 40px;
     border: 4px solid var(--cor-secundaria);
 }
 
@@ -746,7 +745,7 @@ body{
 
   .imagem_sobremim {
     width: 90%;
-    max-width: 320px;
+    max-width: 300px;
     height: auto;
     border-radius: 40px;
     margin: 0 auto;
